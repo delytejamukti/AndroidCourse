@@ -20,8 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('advanced')->default(0);
-            $table->integer('video_beginner')->default(0);
-            $table->integer('video_advanced')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

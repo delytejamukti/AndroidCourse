@@ -90,7 +90,7 @@
 				<div class="navbar-header">
 					<!-- Logo -->
 					<div class="navbar-brand">
-						<a class="logo" href="index.html">
+						<a class="logo" href="{{ url('/') }}">
 							<img src="{{asset('img/logo-alt.png')}}" alt="logo">
 						</a>
 					</div>
@@ -108,7 +108,7 @@
 					<ul class="main-menu nav navbar-nav navbar-right">
                         @if (Route::has('login'))
                                 @auth
-                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ route('login') }}">Home</a></li>
                                 @else
                                 <li><a href="{{ route('login') }}">Login</a></li>
                                     @if (Route::has('register'))
