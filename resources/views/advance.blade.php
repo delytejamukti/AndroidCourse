@@ -109,35 +109,12 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video1">
-              <noscript>
-                <a href="http://<?php echo $HOST ?>:8181/video1.html" target="_blank">
-                  Click here to play this video
-                </a>
-              </noscript>
-              <script>
-                var a = function(){
-                  mistPlay("video1",{
-                  target: document.getElementById("video1"),
-                  autoplay: false,
-                  width: 853,
-                  height: 480
-                  });
-                };
-                if (!window.mistplayers) {
-                  var p = document.createElement("script");
-                  p.src = "<?php echo $SRC ?>"
-                  document.head.appendChild(p);
-                  p.onload = a;
-                }
-                else { a(); }
-              </script>
-                </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video1.html">Basic ListView Demo: Android Programming</a>
+                  <a href="play?id=video7">Basic ListView Demo: Android Programming</a>
                 </h4>
-                <h5>00:00</h5>
+                <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">
@@ -145,37 +122,15 @@
               </div>
           </div>
         </div>
+
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video1">
-              <noscript>
-                <a href="http://<?php echo $HOST ?>:8181/video1.html" target="_blank">
-                  Click here to play this video
-                </a>
-              </noscript>
-              <script>
-                var a = function(){
-                  mistPlay("video1",{
-                  target: document.getElementById("video1"),
-                  autoplay: false,
-                  width: 853,
-                  height: 480
-                  });
-                };
-                if (!window.mistplayers) {
-                  var p = document.createElement("script");
-                  p.src = "<?php echo $SRC ?>"
-                  document.head.appendChild(p);
-                  p.onload = a;
-                }
-                else { a(); }
-              </script>
-                </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video1.html">Basic ListView Demo: Android Programming</a>
+                  <a href="play?id=video8">Basic ListView Demo: Android Programming</a>
                 </h4>
-                <h5>00:00</h5>
+                <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">
@@ -186,35 +141,12 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video2">
-              <noscript>
-                <a href="http://<?php echo $HOST ?>:8181/video1.html" target="_blank">
-                  Click here to play this video
-                </a>
-              </noscript>
-              <script>
-                var a = function(){
-                  mistPlay("video2",{
-                  target: document.getElementById("video2"),
-                  autoplay: false,
-                  width: 853,
-                  height: 480
-                  });
-                };
-                if (!window.mistplayers) {
-                  var p = document.createElement("script");
-                  p.src = "<?php echo $SRC ?>"
-                  document.head.appendChild(p);
-                  p.onload = a;
-                }
-                else { a(); }
-              </script>
-                </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video1.html">How to Make a Button Open a New Activity - Android Studio Tutorial</a>
+                  <a href="play?id=video9">How to Make a Button Open a New Activity - Android Studio Tutorial</a>
                 </h4>
-                <h5>00:00</h5>
+                <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">
@@ -225,35 +157,12 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video2">
-              <noscript>
-                <a href="http://<?php echo $HOST ?>:8181/video3.html" target="_blank">
-                  Click here to play this video
-                </a>
-              </noscript>
-              <script>
-                var a = function(){
-                  mistPlay("video2",{
-                  target: document.getElementById("video3"),
-                  autoplay: false,
-                  width: 853,
-                  height: 480
-                  });
-                };
-                if (!window.mistplayers) {
-                  var p = document.createElement("script");
-                  p.src = "<?php echo $SRC ?>"
-                  document.head.appendChild(p);
-                  p.onload = a;
-                }
-                else { a(); }
-              </script>
-                </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video3.html">How to Create Welcome Screen (Splash Screen) in Android Studio</a>
+                  <a href="play?id=video10">How to Create Welcome Screen (Splash Screen) in Android Studio</a>
                 </h4>
-                <h5>00:00</h5>
+                <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">
@@ -264,35 +173,12 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video4">
-              <noscript>
-                <a href="http://<?php echo $HOST ?>:8181/video4.html" target="_blank">
-                  Click here to play this video
-                </a>
-              </noscript>
-              <script>
-                var a = function(){
-                  mistPlay("video4",{
-                  target: document.getElementById("video4"),
-                  autoplay: false,
-                  width: 853,
-                  height: 480
-                  });
-                };
-                if (!window.mistplayers) {
-                  var p = document.createElement("script");
-                  p.src = "<?php echo $SRC ?>"
-                  document.head.appendChild(p);
-                  p.onload = a;
-                }
-                else { a(); }
-              </script>
-                </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video3.html">How To Learn Android App Development (2018)</a>
+                  <a href="play?id=video11">How To Learn Android App Development (2018)</a>
                 </h4>
-                <h5>00:00</h5>
+                <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">
@@ -303,35 +189,12 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video5">
-              <noscript>
-                <a href="http://<?php echo $HOST ?>:8181/video4.html" target="_blank">
-                  Click here to play this video
-                </a>
-              </noscript>
-              <script>
-                var a = function(){
-                  mistPlay("video5",{
-                  target: document.getElementById("video5"),
-                  autoplay: false,
-                  width: 853,
-                  height: 480
-                  });
-                };
-                if (!window.mistplayers) {
-                  var p = document.createElement("script");
-                  p.src = "<?php echo $SRC ?>"
-                  document.head.appendChild(p);
-                  p.onload = a;
-                }
-                else { a(); }
-              </script>
-                </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video5.html">Introduction to Android development with NetBeans and Maven</a>
+                  <a href="play?id=video12">Introduction to Android development with NetBeans and Maven</a>
                 </h4>
-                <h5>00:00</h5>
+                <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               <div class="card-footer">

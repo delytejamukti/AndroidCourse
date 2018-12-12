@@ -53,10 +53,10 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-              <div class="mistvideo" id="video1"></div>
+              <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                     <h4 class="card-title">
-                    <a href="http://<?php echo $HOST ?>:8181/video1.html">Basic ListView Demo: Android Programming</a>
+                    <a href="play?id=video1">Basic ListView Demo: Android Programming</a>
                     </h4>
                     <h5>Description :</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -68,10 +68,10 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-              <div class="mistvideo" id="video1"></div>
+              <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video1.html">Basic ListView Demo: Android Programming</a>
+                  <a href="play?id=video2">Basic ListView Demo: Android Programming</a>
                 </h4>
                 <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -84,10 +84,10 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video2"> </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video1.html">How to Make a Button Open a New Activity - Android Studio Tutorial</a>
+                  <a href="play?id=video3">How to Make a Button Open a New Activity - Android Studio Tutorial</a>
                 </h4>
                 <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -100,10 +100,10 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video2"> </div> <!-- untuk script video -->  
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video3.html">How to Create Welcome Screen (Splash Screen) in Android Studio</a>
+                  <a href="play?id=video4">How to Create Welcome Screen (Splash Screen) in Android Studio</a>
                 </h4>
                 <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -116,10 +116,10 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video4"></div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video3.html">How To Learn Android App Development (2018)</a>
+                  <a href="play?id=video5">How To Learn Android App Development (2018)</a>
                 </h4>
                 <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -132,10 +132,10 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <div class="mistvideo" id="video5"> </div>
+            <img src="temp.jpg" style="height: 200px"></img>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="http://<?php echo $HOST ?>:8181/video5.html">Introduction to Android development with NetBeans and Maven</a>
+                  <a href="play?id=video6">Introduction to Android development with NetBeans and Maven</a>
                 </h4>
                 <h5>Description :</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
