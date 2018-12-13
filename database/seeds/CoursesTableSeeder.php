@@ -12,24 +12,7 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        // // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-
-        // DB::table('courses')->truncate();
-
-        // $courses = [];
-        // $faker = Factory::create();
-
-        // for($i = 1; $i <=10; $i++)
-        // {
-        //     $courses[] = [
-        //         'is_advanced' => rand(0,1),
-        //         'judul' => $faker->sentence(rand(7,10)),
-        //         'diskripsi' => $faker->text(rand(100,150)),
-        //         'nama_vidio' => $faker->sentence(rand(7,10)),
-        //     ];
-        // }
-
-        // DB::table('courses')->insert($courses);
+        
 
         \DB::table('courses')->delete();
         \DB::table('courses')->insert(array (
@@ -44,6 +27,66 @@ class CoursesTableSeeder extends Seeder
                 'judul' => 'Basic List View Demo 2',
                 'diskripsi' => 'diskripsi 2',
                 'nama_vidio' => 'vidio2.mkv',
+            ),
+            array (
+                'is_advanced' => 0,
+                'judul' => 'Basic List View Demo 3',
+                'diskripsi' => 'diskripsi 3',
+                'nama_vidio' => 'vidio3.mkv',
+            ),
+            array (
+                'is_advanced' => 0,
+                'judul' => 'Basic List View Demo 4',
+                'diskripsi' => 'diskripsi 4',
+                'nama_vidio' => 'vidio4.mkv',
+            ),
+            array (
+                'is_advanced' => 0,
+                'judul' => 'Basic List View Demo 5',
+                'diskripsi' => 'diskripsi 5',
+                'nama_vidio' => 'vidio5.mkv',
+            ),
+            array (
+                'is_advanced' => 0,
+                'judul' => 'Basic List View Demo 6',
+                'diskripsi' => 'diskripsi 6',
+                'nama_vidio' => 'vidio6.mkv',
+            ),
+            array (
+                'is_advanced' => 1,
+                'judul' => 'Basic List View Demo Advance',
+                'diskripsi' => 'diskripsi Advance',
+                'nama_vidio' => 'vidio_Advance1.mkv',
+            ),
+            array (
+                'is_advanced' => 1,
+                'judul' => 'Basic List View Demo 2 Advance',
+                'diskripsi' => 'diskripsi 2 Advance',
+                'nama_vidio' => 'vidio_Advance2.mkv',
+            ),
+            array (
+                'is_advanced' => 1,
+                'judul' => 'Basic List View Demo 3 Advance',
+                'diskripsi' => 'diskripsi 3',
+                'nama_vidio' => 'vidio_Advance3.mkv',
+            ),
+            array (
+                'is_advanced' => 1,
+                'judul' => 'Basic List View Demo 4 Advance',
+                'diskripsi' => 'diskripsi 4 Advance',
+                'nama_vidio' => 'vidio_Advance4.mkv',
+            ),
+            array (
+                'is_advanced' => 1,
+                'judul' => 'Basic List View Demo 5 Advance',
+                'diskripsi' => 'diskripsi 5 Advance',
+                'nama_vidio' => 'vidio_Advance5.mkv',
+            ),
+            array (
+                'is_advanced' => 1,
+                'judul' => 'Basic List View Demo 6 Advance',
+                'diskripsi' => 'diskripsi 6 Advance',
+                'nama_vidio' => 'vidio_Advance6.mkv',
             ),
             
         ));
