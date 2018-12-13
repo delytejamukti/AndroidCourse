@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Courses;
+use Auth;
 
 class AdvancedController extends Controller
 {
@@ -13,6 +15,7 @@ class AdvancedController extends Controller
 
     public function index()
     {
-        return view('advance');
+        $data['courses'] = Courses::where('is_advanced',Auth::user()->advanced)->get();
+        return view('advance', $data);
     }
 }
