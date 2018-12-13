@@ -40,6 +40,7 @@ class HomeController extends Controller
         $data['persen'] = (int)$persentase;   
         return view('home',$data);
     }
+    
     public function play($id)
     {   $id_vidio = $id;
         $user_id = Auth::user()->id;
@@ -54,6 +55,7 @@ class HomeController extends Controller
 
         return view('play');
 
-
     }
+
+   
 }
