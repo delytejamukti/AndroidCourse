@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/play', function () {
+    return view('play');
+});
+
+
 Route::get('/2', function () {
     return view('welcome2');
 });
