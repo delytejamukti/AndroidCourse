@@ -12,7 +12,7 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        \DB::table('courses')->truncate();
 
         \DB::table('courses')->delete();
         \DB::table('courses')->insert(array (

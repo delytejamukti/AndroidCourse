@@ -11,6 +11,7 @@ class HistoryViewTableSeeder extends Seeder
      */
     public function run()
     {
+        \DB::table('history_view')->truncate();
         \DB::table('history_view')->delete();
         \DB::table('history_view')->insert(array (
             array (
