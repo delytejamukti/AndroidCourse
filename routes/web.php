@@ -21,7 +21,12 @@ Route::get('/2', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/play/{id}', 'HomeController@play');
+
+
+
 Route::get('/advance', 'AdvancedController@index')->name('advance');
+Route::get('/advance/play/{id}', 'AdvancedController@play');
 
 
 // Route::group(['middleware' =>['web','auth']],function(){

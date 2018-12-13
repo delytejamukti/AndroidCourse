@@ -51,24 +51,31 @@
 
       <div class="row">
 
+        @foreach($courses as $c)
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-              <img src="temp.jpg" style="height: 200px"></img>
+              <img src="temp.jpg" style="height: 200px">
               <div class="card-body">
                     <h4 class="card-title">
-                    <a href="play?id=video1">Basic ListView Demo: Android Programming</a>
+                    <a href="play?id=video1">{{$c->judul}}</a>
                     </h4>
                     <h5>Description :</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    <p class="card-text">{{ str_limit($c->diskripsi, $limit = 20, $end = '...') }}</p>
               </div>
               <div class="card-footer text-center">
-                <button class="btn btn-success" onclick="View('Video1.mkv')">View Video</button>  
+                <a href="{{ url('home/play/'.$c->nama_vidio)}}">
+                  <button class="btn btn-success" onclick="View('Video1.mkv')">View Video</button>  
+                </a>
               </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
+        @endforeach
+
+
+<!-- <div>  </div> -->
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-              <img src="temp.jpg" style="height: 200px"></img>
+              <img src="temp.jpg" style="height: 200px">
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="play?id=video2">Basic ListView Demo: Android Programming</a>
@@ -84,7 +91,7 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
+            <img src="temp.jpg" style="height: 200px">
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="play?id=video3">How to Make a Button Open a New Activity - Android Studio Tutorial</a>
@@ -100,7 +107,7 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
+            <img src="temp.jpg" style="height: 200px">
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="play?id=video4">How to Create Welcome Screen (Splash Screen) in Android Studio</a>
@@ -116,7 +123,7 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
+            <img src="temp.jpg" style="height: 200px">
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="play?id=video5">How To Learn Android App Development (2018)</a>
@@ -132,7 +139,7 @@
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
+            <img src="temp.jpg" style="height: 200px">
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="play?id=video6">Introduction to Android development with NetBeans and Maven</a>
@@ -146,7 +153,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
       <!-- /.row -->
 
 

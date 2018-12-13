@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Courses;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -22,7 +23,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home');
+    {   $data['courses'] = Courses::where('is_advanced',Auth::user()->advanced)->get();
+        
+        return view('home',$data);
     }
 }
