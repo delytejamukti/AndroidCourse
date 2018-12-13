@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-1"></div>
               <div class="col-10">
-                <h3 class="card-title">Basic ListView Demo: Android Programming</h3><p></p><hr>
+                <h3 class="card-title">{{$judul}}</h3><p></p><hr>
                 <div class="mistvideo" id="video1">
                 <!--  start replace sementara -->
                   <!-- <noscript>
@@ -18,7 +18,7 @@
                   </noscript>
                   <script>
                     var a = function(){
-                      mistPlay("video1",{
+                      mistPlay("{{$id}}",{
                         target: document.getElementById("video1"),
                         autoplay: false,
                         width: 853,
@@ -40,9 +40,10 @@
                 <hr>
                 <div class="description">
                   <h4>Description</h4>
-                  <p>Learn how to make a basic ListView on Android Programming.</p>
+                  <p>{{$diskripsi}}}</p>
                 </div>
                 <button class="btn btn-primary" >Convert & Download</button>                
+
               </div>
               <div class="col-1"></div>
             </div>

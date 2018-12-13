@@ -44,6 +44,7 @@ class HomeController extends Controller
     public function play($id)
     {   $id_vidio = $id;
         $user_id = Auth::user()->id;
+        $data = Courses::where('id',$id_vidio)->first();
 
         $view = HistoryView::where('id_user',$user_id)->where('id_course',$id_vidio)->first();
         if(!$view){
