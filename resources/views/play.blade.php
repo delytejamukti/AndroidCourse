@@ -21,7 +21,7 @@
                   </noscript>
                   <script>
                     var a = function(){
-                      mistPlay("video1",{
+                      mistPlay("{{$id}}",{
                         target: document.getElementById("video1"),
                         autoplay: false,
                         width: 853,
