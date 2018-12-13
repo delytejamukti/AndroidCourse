@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="min-height: 85vh;">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -75,7 +75,7 @@
             @yield('content')
         </main>
     </div>
-    <footer class="py-5 bg-primary">
+    <footer class="py-5 bg-primary" style="min-height: 15vh ;">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Multimedia Network Group 2 2018</p>
       </div>
