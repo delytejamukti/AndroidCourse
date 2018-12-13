@@ -11,28 +11,22 @@ class HistoryViewTableSeeder extends Seeder
      */
     public function run()
     {
+        \DB::table('history_view')->truncate();
         \DB::table('history_view')->delete();
         \DB::table('history_view')->insert(array (
             array (
                 'id_user' => '1',
-                'id_vidio' => '1',
+                'id_course' => '1',
             ),
             array (
                 'id_user' => '1',
-                'id_vidio' => '2',
+                'id_course' => '2',
             ),
             array (
                 'id_user' => '1',
-                'id_vidio' => '3',
+                'id_course' => '3',
             ),
-            array (
-                'id_user' => '1',
-                'id_vidio' => '4',
-            ),
-            array (
-                'id_user' => '1',
-                'id_vidio' => '5',
-            ),
+            
         ));    
     }
 }
