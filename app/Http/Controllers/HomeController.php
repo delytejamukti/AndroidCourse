@@ -52,8 +52,10 @@ class HomeController extends Controller
             $add_history->id_course = $id_vidio;
             $add_history->save();
         }
+        
+        $data['course'] = Courses::where('id',$id_vidio)->first();
 
-        return view('play');
+        return view('play',$data);
 
     }
 

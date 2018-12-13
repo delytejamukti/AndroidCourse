@@ -1,11 +1,7 @@
 @extends('layouts.app')
-@include('modalConvert')
-@include('modalDownload')
+
 
 @section('content')
-
-
-
 <div class="container" id="cont_1"> 
       <div class="card">
         <div class="card-body"> 
@@ -14,8 +10,9 @@
               <div class="col-10">
                 <h3 class="card-title">Basic ListView Demo: Android Programming</h3><p></p><hr>
                 <div class="mistvideo" id="video1">
-                  <noscript>
-                    <!-- <a href="http://<?php // echo $HOST ?>:8181/video1.html" target="_blank"> -->
+                <!--  start replace sementara -->
+                  <!-- <noscript>
+                    <a href="http://<?php // echo $HOST ?>:8181/video1.html" target="_blank">
                       Click here to play this video
                     </a>
                   </noscript>
@@ -35,14 +32,17 @@
                       p.onload = a;
                     }
                     else { a(); }
-                  </script>
+                  </script> -->
+                    <!--end replace sementara-->
+
+                <video src="{{ asset('video/'.$course->nama_vidio) }}" type='video/x-matroska; codecs="theora, vorbis"'></video>
                 </div>
                 <hr>
                 <div class="description">
                   <h4>Description</h4>
                   <p>Learn how to make a basic ListView on Android Programming.</p>
                 </div>
-                <button class="btn btn-primary" onclick="Download('Video1.mkv')">Convert & Download</button>                
+                <button class="btn btn-primary" >Convert & Download</button>                
               </div>
               <div class="col-1"></div>
             </div>
@@ -50,4 +50,8 @@
         </div>
       </div>
     </div>
+@include('modalConvert')
+@include('modalDownload')
+
+
 @endsection

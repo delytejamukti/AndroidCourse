@@ -54,8 +54,8 @@
               </div>
               <div class="card-footer text-center">
               @if($c->play == 1)
-                <a href="{{ url('home/play/'.$c->id)}}">
-                  <button class="btn btn-success">View Video</button>  
+                <a href="{{ url('home/play/'.$c->id)}}"> 
+                  <button class="btn btn-success"> <span><i class="fa fa-check" aria-hidden="true"></i></span>View Video</button>  
                 </a>
               @else
                 <a href="{{ url('home/play/'.$c->id)}}">
