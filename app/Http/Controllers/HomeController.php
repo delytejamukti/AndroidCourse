@@ -31,4 +31,9 @@ class HomeController extends Controller
         $data['persen'] = (int)$persentase;   
         return view('home',$data);
     }
+
+    public function play()
+    {
+        return view('play');
+    }
 }
