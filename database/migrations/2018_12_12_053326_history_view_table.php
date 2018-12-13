@@ -16,7 +16,7 @@ class HistoryViewTable extends Migration
         Schema::create('history_view', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user');
-            $table->integer('id_vidio');
+            $table->integer('id_course');
             $table->timestamp('created_at')->nullable();
         });
     }
