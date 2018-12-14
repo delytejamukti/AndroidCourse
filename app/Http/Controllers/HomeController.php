@@ -106,7 +106,7 @@ class HomeController extends Controller
             $error = new ProcessFailedException($process);
 		    return response()->json([
 			    'message'   => 'video failed to convert :'.$error.'.',
-			    'link' => '/video/'.$nama_vidio,
+			    'link' => $nama_vidio,
 			    'class_name'  => 'alert-danger',
 			    'flag' => false
 		    ]);	
