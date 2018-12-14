@@ -12,13 +12,13 @@
                 <h3 class="card-title">{{$course->judul}}</h3><p></p><hr>
                 <!-- <div class="mistvideo" id="videoPlayer">
                   <noscript>
-                    <a href="http://localhost:8181/v{{$id}}.html" target="_blank">
+                    <a href="http://localhost:8181/v{{$course->id}}.html" target="_blank">
                       Click here to play this video
                     </a>
                   </noscript>
                   <script>
                     var a = function(){
-                      mistPlay("v{{$id}}",{
+                      mistPlay("v{{$course->id}}",{
                         target: document.getElementById("videoPlayer"),
                         forcePlayer: "html5",
                         forceType: "html5/video/webm",
