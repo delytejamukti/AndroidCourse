@@ -10,36 +10,33 @@
               <div class="col-1"></div>
               <div class="col-10">
                 <h3 class="card-title">{{$course->judul}}</h3><p></p><hr>
-                <div class="mistvideo" id="video1">
-                <!--  start replace sementara -->
-                  <!-- <noscript>
-                    <a href="http://<?php // echo $HOST ?>:8181/video1.html" target="_blank">
+                <!-- <div class="mistvideo" id="videoPlayer">
+                  <noscript>
+                    <a href="http://localhost:8181/v{{$id}}.html" target="_blank">
                       Click here to play this video
                     </a>
                   </noscript>
                   <script>
                     var a = function(){
-                      mistPlay("{{$id}}",{
-                        target: document.getElementById("video1"),
-                        autoplay: false,
-                        width: 853,
-                        height: 480
+                      mistPlay("v{{$id}}",{
+                        target: document.getElementById("videoPlayer"),
+                        forcePlayer: "html5",
+                        forceType: "html5/video/webm",
+                        controls: "stock",
+                        maxwidth: 830,
+                        maxheight: 480
                       });
                     };
                     if (!window.mistplayers) {
                       var p = document.createElement("script");
-                        // p.src = "<?php // echo $SRC ?>"
+                      p.src = "http://localhost:8181/player.js"
                       document.head.appendChild(p);
                       p.onload = a;
                     }
                     else { a(); }
-                  </script> -->
-                    <!--end replace sementara-->
-
-                      <!-- kalau servernya sudah siap, hapus tag video dibawah ini -->
+                  </script>
+                </div> -->
                 <video src="{{ asset('video/'.$course->nama_vidio) }}" type='video/x-matroska; codecs="theora, vorbis"'></video>
-                
-                </div>
                 <hr>
                 <div class="description">
                   <h4>Description</h4>

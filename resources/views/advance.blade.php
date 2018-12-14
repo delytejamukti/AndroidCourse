@@ -84,18 +84,17 @@
       <div class="row">
 
         <div class="col-md-8">
-          <video class="videoPlayer" controls autoplay width="500px" height="700px" src="uploaded/video1.mp4" type="video/mp4"> </video>
+          <video class="videoPlayer" controls autoplay width="500px" height="700px" src="video/intro.mp4" type="video/mp4"> </video>
         </div>
 
         <div class="col-md-4">
-          <h3 class="my-3">Video Description</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-          <h3 class="my-3">Video Details</h3>
+          <h3 class="my-3">Introduction to Android Course</h3>
+          <p>Welcome to the introductory lesson of the Android applications development for beginners offered by EduSite. In this video you will get an overview of the course.
+          </p>
+          <h3 class="my-3">Course Levels</h3>
           <ul>
-            <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-            <li>Consectetur</li>
-            <li>Adipiscing Elit</li>
+            <li>Basic</li>
+            <li>Advanced</li>
           </ul>
         </div>
 
@@ -107,25 +106,31 @@
 
       <div class="row">
 
-        @foreach($courses as $c)
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img src="temp.jpg" style="height: 200px">
-                <div class="card-body">
-                      <h4 class="card-title">
-                      <a href="play?id=video1">{{$c->judul}}</a>
-                      </h4>
-                      <h5>Description :</h5>
-                      <p class="card-text">{{ str_limit($c->diskripsi, $limit = 20, $end = '...') }}</p>
-                </div>
-                <div class="card-footer text-center">
-                  <a href="{{ url('home/play/'.$c->nama_vidio)}}">
-                    <button class="btn btn-success" onclick="View('Video1.mkv')">View Video</button>  
-                  </a>
-                </div>
-            </div>
+       @foreach($courses as $c)
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+              <img src="{{asset('banner/'.$c->id.'.jpg')}}" style="height: 200px">
+              <div class="card-body">
+                    <h4 class="card-title">
+                      {{$c->judul}}
+                    </h4>
+                    <h5>Description :</h5>
+                    <p class="card-text">{{ str_limit($c->diskripsi, $limit = 70, $end = '....') }}</p>
+              </div>
+              <div class="card-footer text-center">
+              @if($c->play == 1)
+                <a href="{{ url('home/play/'.$c->id)}}"> 
+                  <button class="btn btn-success"> <span><i class="fa fa-check" aria-hidden="true"></i></span>View Video</button>  
+                </a>
+              @else
+                <a href="{{ url('home/play/'.$c->id)}}">
+                  <button class="btn btn-primary">View Video</button>  
+                </a>
+              @endif
+              </div>
           </div>
-          @endforeach
+        </div>
+        @endforeach
         
         <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
