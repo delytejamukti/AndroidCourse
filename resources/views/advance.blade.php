@@ -84,18 +84,17 @@
       <div class="row">
 
         <div class="col-md-8">
-          <video class="videoPlayer" controls autoplay width="500px" height="700px" src="uploaded/video1.mp4" type="video/mp4"> </video>
+          <video class="videoPlayer" controls autoplay width="500px" height="700px" src="video/intro.mp4" type="video/mp4"> </video>
         </div>
 
         <div class="col-md-4">
-          <h3 class="my-3">Video Description</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-          <h3 class="my-3">Video Details</h3>
+          <h3 class="my-3">Introduction to Android Course</h3>
+          <p>Welcome to the introductory lesson of the Android applications development for beginners offered by EduSite. In this video you will get an overview of the course.
+          </p>
+          <h3 class="my-3">Course Levels</h3>
           <ul>
-            <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-            <li>Consectetur</li>
-            <li>Adipiscing Elit</li>
+            <li>Basic</li>
+            <li>Advanced</li>
           </ul>
         </div>
 
