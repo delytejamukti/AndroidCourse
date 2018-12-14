@@ -106,25 +106,31 @@
 
       <div class="row">
 
-        @foreach($courses as $c)
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <img src="{{asset('banner/'.$c->id.'.jpg')}}" style="height: 200px">
-                <div class="card-body">
-                      <h4 class="card-title">
-                      <a href="play?id=video1">{{$c->judul}}</a>
-                      </h4>
-                      <h5>Description :</h5>
-                      <p class="card-text">{{ str_limit($c->diskripsi, $limit = 20, $end = '...') }}</p>
-                </div>
-                <div class="card-footer text-center">
-                  <a href="{{ url('home/play/'.$c->id)}}">
-                    <button class="btn btn-success">View Video</button>  
-                  </a>
-                </div>
-            </div>
+       @foreach($courses as $c)
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+              <img src="{{asset('banner/'.$c->id.'.jpg')}}" style="height: 200px">
+              <div class="card-body">
+                    <h4 class="card-title">
+                      {{$c->judul}}
+                    </h4>
+                    <h5>Description :</h5>
+                    <p class="card-text">{{ str_limit($c->diskripsi, $limit = 70, $end = '....') }}</p>
+              </div>
+              <div class="card-footer text-center">
+              @if($c->play == 1)
+                <a href="{{ url('home/play/'.$c->id)}}"> 
+                  <button class="btn btn-success"> <span><i class="fa fa-check" aria-hidden="true"></i></span>View Video</button>  
+                </a>
+              @else
+                <a href="{{ url('home/play/'.$c->id)}}">
+                  <button class="btn btn-primary">View Video</button>  
+                </a>
+              @endif
+              </div>
           </div>
-          @endforeach
+        </div>
+        @endforeach
         
         <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
