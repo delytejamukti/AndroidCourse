@@ -110,7 +110,7 @@
         @foreach($courses as $c)
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-                <img src="temp.jpg" style="height: 200px">
+                <img src="{{asset('banner/'.$c->id.'.jpg')}}" style="height: 200px">
                 <div class="card-body">
                       <h4 class="card-title">
                       <a href="play?id=video1">{{$c->judul}}</a>
@@ -119,8 +119,8 @@
                       <p class="card-text">{{ str_limit($c->diskripsi, $limit = 20, $end = '...') }}</p>
                 </div>
                 <div class="card-footer text-center">
-                  <a href="{{ url('home/play/'.$c->nama_vidio)}}">
-                    <button class="btn btn-success" onclick="View('Video1.mkv')">View Video</button>  
+                  <a href="{{ url('home/play/'.$c->id)}}">
+                    <button class="btn btn-success">View Video</button>  
                   </a>
                 </div>
             </div>
