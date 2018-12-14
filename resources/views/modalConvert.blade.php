@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <form >
-        <input type="hidden" name="id_vidio" id="id_vidio" value="">
+        <input type="hidden" name="nama_vidio" id="nama_vidio" value="{{$course->nama_vidio}}">
           <div class="form-group">
             <label for="format">Output Format</label>
             <select id="format" name="format">

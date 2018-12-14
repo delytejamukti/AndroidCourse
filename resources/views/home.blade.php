@@ -68,67 +68,11 @@
         @endforeach
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.js"></script>
-  <script>
-      function Download(nama_vidio){
-        $("#judul_modal").html("Download "+nama_vidio);
-        $("#modal_convert").modal('show');
-        $("#id_vidio").val(nama_vidio);
-      }
-
-      $(document).on('click','#btn_convert', function(){
-        $("#modal_convert").modal('hide');
-        var id = $("#id_vidio").val();
-        var format = $("#format option:selected").val();
-        var frame_size = $("#frame_size option:selected").val();
-        var framerate = $("#framerate option:selected").val();
-        
-        console.log(framerate);
-        setTimeout(function() {
-        }, 300);
-        waitingDialog.show('Converting',{
-        headerText: '',
-        headerSize: 3,
-        headerClass: '',
-        dialogSize: 'm',
-        progressType: '',
-        contentElement: 'p',
-        contentClass: 'content'
-        });
-
-        $.ajax({ url: 'eksekusi.php',
-         data: {
-           id:id,
-           format:format,
-           frame_size:frame_size,
-           framerate:framerate},
-         type: 'post',
-         success: function(data) {
-              if(data.flag == "sukses"){
-                waitingDialog.hide();
-                $("a[href='http://dummylink']").attr('href', data.link );
-                $("#modal_download").modal('show');
-
-              }else{
-                console.log("gagal convert");
-              }
-         }
-        });
-      });
-
   
-  </script>
     <!-- /.container -->
 
     <!-- Footer -->
     
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="assets/jquery/jquery.min.js"></script>
-    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 
 
 

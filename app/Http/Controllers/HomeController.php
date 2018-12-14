@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use Illuminate\Http\Request;
 use App\Courses;
 use App\HistoryView;
@@ -57,6 +58,51 @@ class HomeController extends Controller
         $data['course'] = Courses::where('id',$id_vidio)->first();
 
         return view('play',$data);
+
+    }
+
+    public function convert(Request $request)
+    {
+        $nama_vidio = $request->nama_vidio;
+        $format = $request->format;
+        $frame_size = $request->frame_size;
+        $frame_rate = $request->frame_rate;
+        $unik = mt_rand(1000000, 9999999);
+        
+        $input = public_path('video').'/'.$nama_vidio;
+        $info = pathinfo($input);
+        
+        $video_name =  basename($input,'.'.$info['extension']);
+        $new_name = $video_name.$unik.'.'.$format;
+
+        $output = public_path('converted').'/'.$new_name;
+
+        
+        $command = "ffmpeg -i ".$input." -vf scale=".$frame_size." ".$frame_rate." ".$output;
+        $process = new Process ($command);
+        $process->run();
+        
+        if (!$process->isSuccessful()){
+            $error = new ProcessFailedException($process);
+		    return response()->json([
+			    'message'   => 'video failed to convert :'.$error.'.',
+			    'link' => '',
+			    'class_name'  => 'alert-danger',
+			    'flag' => false
+		    ]);	
+        }else{
+            return response()->json([
+                'message'   => 'video converted Successfully ',
+                'link' => '/converted/'.$new_name,
+                'class_name'  => 'alert-success',
+                'flag' => true
+                ]);
+
+        }
+        
+
+
+
 
     }
 
