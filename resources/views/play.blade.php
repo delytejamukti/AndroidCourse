@@ -105,6 +105,10 @@
 
               }else{
                 console.log("gagal convert");
+                waitingDialog.hide();
+                console.log(data.message);
+                $("a[href='http://dummylink']").attr('href', data.link );
+                $("#modal_download").modal('show');
               }
          }
         });
