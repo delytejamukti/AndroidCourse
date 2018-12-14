@@ -1,78 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-    @php
-    $HOST = "192.168.100.53";
-    $SRC = "http://".$HOST.":8181/player.js";
-    @endphp
-
-
-<div class="modal fade" id="modal_convert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="judul" id="judul_modal"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form >
-        <input type="hidden" name="id_vidio" id="id_vidio" value="">
-          <div class="form-group">
-            <label for="format">Output Format</label>
-            <select id="format" name="format">
-              <option value="">Please select output format...</option>
-              <option value="mp4">MP4</option>
-              <option value="mkv">MKV</option>
-              <option value="avi">AVI</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-          <label for="frame_size">Resolution</label>
-          <select id="frame_size" name="frame_size" required>
-            <option value="" >Please select frame size</option>
-            <option value="426x240">426x240</option>
-            <option value="480x360">480x360</option>
-            <option value="680x480">680x480</option>
-            <option value="1280x720">1280x720</option>
-          </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="framerate">Frame Rate</label>
-            <select id="framerate" name="framerate">
-              <option value="" selected="selected">Not Determined</option>
-              <option value=" -r 24 ">24 fps</option>
-              <option value=" -r 25 ">25 fps</option>
-              <option value=" -r 30 ">30 fps</option>
-              <option value=" -r 48 ">48 fps</option>
-              <option value=" -r 50 ">50 fps</option>
-              <option value=" -r 60 ">60 fps</option>
-            </select>
-          </div>
-          
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button  class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button  class="btn btn-primary" id="btn_convert" data-dismiss="modal">Download</button>
-      </div>
-    </div>
-  </div>
-</div>
-
     <!-- Page Content -->
     <div class="container">
     <div class="pull-right">
-        <span class="badge badge-primary ">Advanced Class</span>
+        <span class="badge badge-primary ">Advance Class</span>
     </div>
     <h4 class="text-center">Learning Progress</h4>
     <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="progress-bar" role="progressbar" style="width:{{$persen}}.%" aria-valuemin="0" aria-valuemax="100">{{$persen}}%</div>
     </div>
 
       <!-- Portfolio Item Heading -->
@@ -97,7 +33,6 @@
             <li>Advanced</li>
           </ul>
         </div>
-
       </div>
       <!-- /.row -->
 
@@ -106,7 +41,7 @@
 
       <div class="row">
 
-       @foreach($courses as $c)
+        @foreach($courses as $c)
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
               <img src="{{asset('banner/'.$c->id.'.jpg')}}" style="height: 200px">
@@ -119,11 +54,11 @@
               </div>
               <div class="card-footer text-center">
               @if($c->play == 1)
-                <a href="{{ url('home/play/'.$c->id)}}"> 
+                <a href="{{ url('advance/play/'.$c->id)}}"> 
                   <button class="btn btn-success"> <span><i class="fa fa-check" aria-hidden="true"></i></span>View Video</button>  
                 </a>
               @else
-                <a href="{{ url('home/play/'.$c->id)}}">
+                <a href="{{ url('advance/play/'.$c->id)}}">
                   <button class="btn btn-primary">View Video</button>  
                 </a>
               @endif
@@ -131,184 +66,13 @@
           </div>
         </div>
         @endforeach
-        
-        <!-- <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="play?id=video7">Basic ListView Demo: Android Programming</a>
-                </h4>
-                <h5>Description :</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-success" onclick="Download('Video1.mkv')">Download</button>  
-              </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="play?id=video8">Basic ListView Demo: Android Programming</a>
-                </h4>
-                <h5>Description :</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-primary" onclick="Download('Video1.mkv')">Download</button>  
-              </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="play?id=video9">How to Make a Button Open a New Activity - Android Studio Tutorial</a>
-                </h4>
-                <h5>Description :</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-primary" onclick="Download('Video2.mkv')">Download</button>  
-              </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="play?id=video10">How to Create Welcome Screen (Splash Screen) in Android Studio</a>
-                </h4>
-                <h5>Description :</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-primary" onclick="Download('Video3.mkv')">Download</button>  
-              </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="play?id=video11">How To Learn Android App Development (2018)</a>
-                </h4>
-                <h5>Description :</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-primary" onclick="Download('Video4.mkv')">Download</button>  
-              </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <img src="temp.jpg" style="height: 200px"></img>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="play?id=video12">Introduction to Android development with NetBeans and Maven</a>
-                </h4>
-                <h5>Description :</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-primary" onclick="Download('Video5.mkv')">Download</button>  
-              </div>
-          </div>
-        </div>
-
-      </div> -->
-      <!-- /.row -->
-
-
-    <div class="modal fade" id="modal_download" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Download Selesai</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <a href="http://dummylink" download><button class="green">Download</button></a>        
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.js"></script>
-  <script>
-      function Download(nama_vidio){
-        $("#judul_modal").html("Download "+nama_vidio);
-        $("#modal_convert").modal('show');
-        $("#id_vidio").val(nama_vidio);
-      }
-
-      $(document).on('click','#btn_convert', function(){
-        $("#modal_convert").modal('hide');
-        var id = $("#id_vidio").val();
-        var format = $("#format option:selected").val();
-        var frame_size = $("#frame_size option:selected").val();
-        var framerate = $("#framerate option:selected").val();
-        
-        console.log(framerate);
-        setTimeout(function() {
-        }, 300);
-        waitingDialog.show('Converting',{
-        headerText: '',
-        headerSize: 3,
-        headerClass: '',
-        dialogSize: 'm',
-        progressType: '',
-        contentElement: 'p',
-        contentClass: 'content'
-        });
-
-        $.ajax({ url: 'eksekusi.php',
-         data: {
-           id:id,
-           format:format,
-           frame_size:frame_size,
-           framerate:framerate},
-         type: 'post',
-         success: function(data) {
-              if(data.flag == "sukses"){
-                waitingDialog.hide();
-                $("a[href='http://dummylink']").attr('href', data.link );
-                $("#modal_download").modal('show');
-
-              }else{
-                console.log("gagal convert");
-              }
-         }
-        });
-      });
 
   
-  </script>
     <!-- /.container -->
 
     <!-- Footer -->
     
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="assets/jquery/jquery.min.js"></script>
-    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 
 
 

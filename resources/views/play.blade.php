@@ -87,6 +87,7 @@
         });
 
         $.ajax({ 
+
         url: "{{route('beginner.convert')}}",
         method:"POST",
         dataType:'JSON',
@@ -100,7 +101,8 @@
               if(data.flag){
                 waitingDialog.hide();
                 console.log(data.message);
-                $("a[href='http://dummylink']").attr('href', data.link );
+                var path = "{{asset('converted/')}}";
+                $("a[href='http://dummylink']").attr('href', path+'/'+data.link );
                 $("#modal_download").modal('show');
 
               }else{

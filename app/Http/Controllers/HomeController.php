@@ -5,6 +5,7 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Illuminate\Http\Request;
 use App\Courses;
+use App\User;
 use App\HistoryView;
 use Auth;
 class HomeController extends Controller
@@ -17,6 +18,8 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        
+
     }
 
     /**
@@ -26,20 +29,37 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $courses = Courses::where('is_advanced',Auth::user()->advanced)->orderBy('id','ASC')->get();
-        $history = HistoryView::where('id_user',Auth::user()->id)->pluck('id_course')->toArray();
-        foreach ($courses as $key => $c) {
-            if(in_array($c->id,$history)){
-                $c['play'] = 1;  
-            }else{
-                $c['play'] = 0;
+        $id = Auth::user()->id;
+        $total = HistoryView::where('id_user',Auth::user()->id)->pluck('id_course')->toArray();
+        $total2 = count($total);
+        if($total2 >=6){
+            $user = User::where('id',Auth::user()->id)->first();
+            // dd($user);
+            $user->advanced = 1;
+            $user->save();
+            return redirect()->route('advance');
+
+        }else{
+
+            $courses = Courses::where('is_advanced',Auth::user()->advanced)->orderBy('id','ASC')->get();
+            $history = HistoryView::where('id_user',Auth::user()->id)->pluck('id_course')->toArray();
+            foreach ($courses as $key => $c) {
+                if(in_array($c->id,$history)){
+                    $c['play'] = 1;  
+                }else{
+                    $c['play'] = 0;
+                }
+                
             }
-            
+            $data['courses'] = $courses;
+            $persentase =  (count($history)/6)*100;
+            $data['persen'] = (int)$persentase;   
+            return view('home',$data);
+
+
         }
-        $data['courses'] = $courses;
-        $persentase =  (count($history)/6)*100;
-        $data['persen'] = (int)$persentase;   
-        return view('home',$data);
+
+        
     }
     
     public function play($id)
@@ -93,7 +113,7 @@ class HomeController extends Controller
         }else{
             return response()->json([
                 'message'   => 'video converted Successfully ',
-                'link' => '/converted/'.$new_name,
+                'link' => $new_name,
                 'class_name'  => 'alert-success',
                 'flag' => true
                 ]);
