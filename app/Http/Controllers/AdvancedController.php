@@ -54,6 +54,7 @@ class AdvancedController extends Controller
 
     public function convert(Request $request)
     {
+        ini_set('max_execution_time', 600);
         $nama_vidio = $request->nama_vidio;
         $format = $request->format;
         $frame_size = $request->frame_size;
