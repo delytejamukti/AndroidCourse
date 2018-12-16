@@ -53,7 +53,7 @@ class HomeController extends Controller
         $data['courses'] = $courses;
         $persentase =  (count($history)/6)*100;
         if( Auth::user()->advanced > 0){
-            $persentase =  ((count($history)-6)/6)*100;
+            $persentase =  100;
         }
         $data['persen'] = (int)$persentase;   
         return view('home',$data);
