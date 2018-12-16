@@ -5,6 +5,7 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Illuminate\Http\Request;
 use App\Courses;
+use App\User;
 use App\HistoryView;
 use Auth;
 
@@ -18,7 +19,8 @@ class AdvancedController extends Controller
 
     public function index()
     {
-        $courses = Courses::where('is_advanced',Auth::user()->advanced)->orderBy('id','ASC')->get();
+    	$is_adv = Auth::user()->advanced;
+        $courses = Courses::where('is_advanced',"1")->orderBy('id','ASC')->get();
         $history = HistoryView::where('id_user',Auth::user()->id)->pluck('id_course')->toArray();
         foreach ($courses as $key => $c) {
             if(in_array($c->id,$history)){
@@ -28,6 +30,21 @@ class AdvancedController extends Controller
             }
             
         }
+
+        $total = HistoryView::where('id_user',Auth::user()->id)->pluck('id_course')->toArray();
+        $total2 = count($total);
+        if($total2 >=12 && Auth::user()->advanced==1){
+            $user = User::where('id',Auth::user()->id)->first();
+            // dd($user);
+            $user->advanced = 2;
+            $user->save();
+            return redirect()->route('advance');
+        }
+
+        if($is_adv < 1){
+            return redirect()->route('home');
+        }
+
         $data['courses'] = $courses;
         $persentase =  ((count($history)-6)/6)*100;
         $data['persen'] = (int)$persentase;   
