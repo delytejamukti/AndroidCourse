@@ -7,8 +7,11 @@
       <div class="card">
         <div class="card-body"> 
             <div class="row">
+            
               <div class="col-1"></div>
               <div class="col-10">
+              <button class="btn btn-primary" onclick="back()"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span> Back</button>
+              <div class="mb-3"></div>
                 <h3 class="card-title">{{$course->judul}}</h3><p></p><hr>
                 <!-- <div class="mistvideo" id="videoPlayer">
                   <noscript>
@@ -60,6 +63,11 @@
     $("#judul_modal").html("Download "+nama_vidio);
     $("#modal_convert").modal('show');
   }
+
+  function back(){
+    location.replace(document.referrer);
+  }
+
   $(document).on('click','#btn_convert', function(){
         $("#modal_convert").modal('hide');
         var nama_vidio = $("#nama_vidio").val();

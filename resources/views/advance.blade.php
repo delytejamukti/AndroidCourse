@@ -18,21 +18,31 @@
 
       <!-- Portfolio Item Row -->
       <div class="row">
+      <div class="col-md-12">
+          <div class="row">
+              <div class="col-md-7" style="margin-top:-150px;">
+                <video class="videoPlayer" controls autoplay width="500px" height="700px" src="video/intro.mp4" type="video/mp4"> </video>
+              </div>
 
-        <div class="col-md-8">
-          <video class="videoPlayer" controls autoplay width="500px" height="700px" src="video/intro.mp4" type="video/mp4"> </video>
-        </div>
+                <div class="col-md-4" style="margin-top:50px;">
+                  <h3 class="my-3">Introduction to Android Course</h3>
+                  <p>Welcome to the introductory lesson of the Android applications development for beginners offered by EduSite. In this video you will get an overview of the course.
+                  </p>
+                  <h3 class="my-3">Course Levels</h3>
+                  <ul>
+                    <li>Basic</li>
+                    <li>Advanced</li>
+                    @if($persen == 100)
+                    <a href="{{route('download_certificate')}}">
+                      <button class="btn btn-success mt-3">Download E-Certificate</button>
+                    </a>
+                    @endif
 
-        <div class="col-md-4">
-          <h3 class="my-3">Introduction to Android Course</h3>
-          <p>Welcome to the introductory lesson of the Android applications development for beginners offered by EduSite. In this video you will get an overview of the course.
-          </p>
-          <h3 class="my-3">Course Levels</h3>
-          <ul>
-            <li>Basic</li>
-            <li>Advanced</li>
-          </ul>
+                  </ul>
+                </div>
+          </div>
         </div>
+        
       </div>
       <!-- /.row -->
 

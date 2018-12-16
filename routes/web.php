@@ -36,6 +36,7 @@ Route::post('/home/convert', 'HomeController@convert')->name('beginner.convert')
 Route::get('/advance', 'AdvancedController@index')->name('advance');
 Route::get('/advance/play/{id}', 'AdvancedController@play');
 Route::post('/advance/convert', 'AdvancedController@convert')->name('advance.convert');
+Route::get('/advance/download_certificate', 'AdvancedController@certificate')->name('download_certificate');
 
 
 

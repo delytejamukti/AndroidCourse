@@ -13,7 +13,7 @@
           <div class="form-group">
             <label for="format">Output Format</label>
             <select id="format" name="format">
-              <option value="">Please select output format...</option>
+              <option value="mkv">Please select output format...</option>
               <option value="mp4">MP4</option>
               <option value="mkv">MKV</option>
               <option value="avi">AVI</option>

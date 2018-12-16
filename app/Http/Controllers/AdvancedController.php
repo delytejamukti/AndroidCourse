@@ -8,6 +8,7 @@ use App\Courses;
 use App\HistoryView;
 use Auth;
 
+
 class AdvancedController extends Controller
 {
     public function __construct()
@@ -95,6 +96,12 @@ class AdvancedController extends Controller
     
         
 
+    }
+
+    public function certificate()
+    {   $data['name'] = Auth::user()->name;
+        $pdf = \PDF::loadView('certificate', $data);
+        return $pdf->download('certificate.pdf'); 
     }
         
 
