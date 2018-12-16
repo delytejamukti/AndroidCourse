@@ -40,6 +40,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @guest
+                        @else
+                            @if (Auth::user()->advanced === 0)
+                            <li class="nav-item">
+                                <img src="{{asset('banner/bronze.png')}}">
+                            </li>
+                            @elseif (Auth::user()->advanced === 1)
+                            <li class="nav-item">
+                                <img src="{{asset('banner/silver.png')}}">
+                            </li>
+                            @elseif (Auth::user()->advanced === 2)
+                            <li class="nav-item">
+                                <img src="{{asset('banner/gold.png')}}">
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">Beginner Course</a>
+                            </li> 
+                            @if (Auth::user()->advanced >= 1)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('advance') }}">Advance Course</a>
+                            </li> 
+                            @endif
+                        @endguest
 
                     </ul>
 
