@@ -11,7 +11,7 @@
               <div class="col-10">
               <button class="btn btn-primary" onclick="back()"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span> Back</button>
                 <h3 class="card-title">{{$course->judul}}</h3><p></p><hr>
-                <div class="mistvideo" id="videoPlayer">
+                <!-- <div class="mistvideo" id="videoPlayer">
                   <noscript>
                     <a href="http://localhost:8181/v{{$course->id}}.html" target="_blank">
                       Click here to play this video
@@ -36,8 +36,8 @@
                     }
                     else { a(); }
                   </script>
-                </div>
-                <!-- <video src="{{ asset('video/'.$course->nama_vidio) }}" type='video/x-matroska; codecs="theora, vorbis"'></video> -->
+                </div> -->
+                <video src="{{ asset('video/'.$course->nama_vidio) }}" type='video/x-matroska; codecs="theora, vorbis"'></video>
                 <hr>
                 <div class="description">
                   <h4>Description</h4>
@@ -114,8 +114,7 @@
                 console.log("gagal convert");
                 waitingDialog.hide();
                 console.log(data.message);
-                var pathf = "{{asset('video/')}}";
-                $("a[href='http://dummylink']").attr('href', pathf+'/'+data.link );
+                $("a[href='http://dummylink']").attr('href', data.link );
                 $("#modal_download").modal('show');
               }
          }
